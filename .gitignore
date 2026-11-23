@@ -1,2 +1,7 @@
 *.so
+*.pyc
 __pycache__/
+*.pdb
+.DS_Store
+*~
+.*.swp

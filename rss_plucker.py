@@ -531,4 +531,7 @@ def main(config, output):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    if len(sys.argv) != 3:
+        print("usage: python3 rss_plucker.py FEEDS.txt OUTPUT.pdb", file=sys.stderr)
+        raise SystemExit(2)
+    main(sys.argv[1], sys.argv[2])
