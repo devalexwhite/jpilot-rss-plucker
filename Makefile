@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2026 Alex White
+
 CC ?= cc
 PKG_CONFIG ?= pkg-config
 CFLAGS ?= -O2 -g

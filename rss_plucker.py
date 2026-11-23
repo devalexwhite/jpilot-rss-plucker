@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2026 Alex White
+
 """Fetch a daily RSS, Atom, and Gemsub edition and write a Plucker record database."""
 
 import datetime as dt
@@ -531,4 +534,7 @@ def main(config, output):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    if len(sys.argv) != 3:
+        print("usage: python3 rss_plucker.py FEEDS.txt OUTPUT.pdb", file=sys.stderr)
+        raise SystemExit(2)
+    main(sys.argv[1], sys.argv[2])

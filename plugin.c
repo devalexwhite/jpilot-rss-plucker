@@ -1,3 +1,6 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+/* Copyright (C) 2026 Alex White */
+
 #include <gtk/gtk.h>
 #include <glib/gstdio.h>
 #include <pi-file.h>
