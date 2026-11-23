@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2026 Alex White
+
 """Fetch a daily RSS, Atom, and Gemsub edition and write a Plucker record database."""
 
 import datetime as dt

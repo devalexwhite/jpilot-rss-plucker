@@ -99,7 +99,7 @@ The hardware gets respect. Constraints are interesting. They are not a punchline
 
 **Status**
 
-- Do: “The desktop preview runs with an empty feed list. A physical HotSync is still untested in this repository.”
+- Do: “Tested with a Tungsten T3 syncing from an Omarchy Linux desktop. Other models are not listed, because they have not been synced.”
 - Don't: “Works with every Palm ever made.”
 
 **Tone**
@@ -247,6 +247,7 @@ The SVG badges use Phosphor on Ink (label) and Phosphor on Moss (message), flat 
 https://img.shields.io/badge/Palm%20OS-compatible-2C3420?style=flat-square&labelColor=161814
 https://img.shields.io/badge/HotSync-ready-5C6B3A?style=flat-square&labelColor=161814
 https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&labelColor=161814
+https://img.shields.io/badge/license-GPL--2.0--or--later-4E524A?style=flat-square&labelColor=161814
 ```
 
 | Badge | Label fill | Message fill | Text |
@@ -254,8 +255,9 @@ https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&label
 | Palm OS compatible | Ink `#161814` | Moss `#2C3420` | white |
 | HotSync ready | Ink `#161814` | Olive `#5C6B3A` | white |
 | Fourshade collection | Ink `#161814` | Graphite `#4E524A` | white |
+| GPL-2.0-or-later | Ink `#161814` | Graphite `#4E524A` | white |
 
-Change the collection badge if the name changes. “HotSync” on a badge means the tool runs during that sync. It is not Palm’s logo.
+Change the collection badge if the name changes. “HotSync” on a badge means the tool runs during that sync. It is not Palm’s logo. The license badge points at a `LICENSE` file. This repository’s file is GPL-2.0-or-later, the same terms as J-Pilot, with the “or any later version” grant.
 
 ## README template
 
@@ -282,7 +284,7 @@ Screenshot slots stay labeled as placeholders until a real capture exists. A dia
 3. Do the same for `assets/social-preview.svg` at 1280×640. Commit the PNG (`.github/social-preview.png` is a reasonable path). Then upload that PNG in the GitHub repository settings. A file in the tree does not set the social image by itself.
 4. Copy `README_TEMPLATE.md` to the repo root `README.md` and fill it. Keep claims inside what the code does.
 5. Add the three badges, or drop any that would be a lie for that project. “HotSync ready” is for a tool that actually runs at HotSync.
-6. Add `CONTRIBUTING.md`, a license the maintainer has actually chosen, and issue templates if the repo takes contributions.
+6. Add `CONTRIBUTING.md`, keep the GPL-2.0-or-later `LICENSE` (or say plainly if a new repo uses different terms), and add issue templates if the repo takes contributions.
 7. Set the GitHub description (350 characters or fewer) and topics in the repository settings.
 8. In “Supported devices,” name only hardware that someone has synced, and mark everything else untested.
 
@@ -294,6 +296,6 @@ Plucker is the name of the open-source document format and viewer this conduit t
 
 ## License of the kit
 
-This folder lives in a repository that has no `LICENSE` file yet. Until the maintainer adds one, do not assume the text or the artwork is free to reuse outside this repository. When the kit is split into its own repo, pick the license then. Do not invent one here.
+This folder is part of Feeds to Plucker, which is free software under the GNU General Public License, version 2, or (at your option) any later version. Copyright (C) 2026 Alex White. The grant is in [LICENSE](../LICENSE) at the repository root. Copying the kit into another repository keeps that license unless the new project says otherwise in its own `LICENSE` file.
 
-The typefaces keep their own licenses, listed above. Those licenses are not the license for the SVG artwork.
+The typefaces keep their own licenses, listed above. Those licenses are not the license for the SVG artwork, and the font files are not in this folder.

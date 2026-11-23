@@ -3,6 +3,7 @@
 [![Palm OS compatible](https://img.shields.io/badge/Palm%20OS-compatible-2C3420?style=flat-square&labelColor=161814)](brand/README.md)
 [![HotSync ready](https://img.shields.io/badge/HotSync-ready-5C6B3A?style=flat-square&labelColor=161814)](brand/README.md)
 [![Fourshade](https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&labelColor=161814)](brand/README.md)
+[![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-4E524A?style=flat-square&labelColor=161814)](LICENSE)
 
 ![Feeds to Plucker](docs/hero.png)
 
@@ -14,7 +15,7 @@ A [Fourshade](brand/README.md) project. Palm OS hardware, still at work.
 
 The conduit is a J-Pilot plugin. You give it feed URLs. On each HotSync the desktop fetches articles dated today, builds a Plucker file with a linked table of contents, and installs that file into the handheld's internal memory. You open **J-Pilot RSS Today** in the Plucker viewer and read it with the cable unplugged.
 
-The conduit does not call a language model. Feed text comes from the feed, from a plain extraction of the linked page, or from the summary.
+The running conduit does not call a language model. Feed text comes from the feed, from a plain extraction of the linked page, or from the summary. A model was used to write the program. That is covered under [How this was made](#how-this-was-made).
 
 ## Screenshots
 
@@ -26,7 +27,7 @@ No J-Pilot window capture and no handheld photograph are checked in. The frames 
 
 ![Placeholder: J-Pilot RSS Today in Plucker. Not a device photograph.](docs/placeholder-device.png)
 
-> **Placeholder.** A photograph of **J-Pilot RSS Today** open in Plucker belongs here. This repository has no record of a physical-device test, so this is not a device screenshot.
+> **Placeholder.** A photograph of **J-Pilot RSS Today** open in Plucker belongs here. The sync below was done on a real Tungsten T3. This frame is not that photograph.
 
 A short GIF of a HotSync belongs with those captures once one exists.
 
@@ -45,11 +46,13 @@ A short GIF of a HotSync belongs with those captures once one exists.
 
 ## Supported devices
 
-**Desktop.** A Unix machine running a GTK 3 build of J-Pilot with plugin support, plus the libraries under [Install](#install). The helper uses `signal.alarm`, so it expects a Unix-style desktop. Python 3.9 or later is required at sync time. Image conversion calls ImageMagick 7 (`magick`). Without `magick`, articles still sync and the alt text is kept when an image cannot be converted.
+**Tested.** A Palm Tungsten T3, syncing from an Omarchy Linux desktop. The T3 runs Palm OS. The Palm OS version and the Plucker build on that device were not written down with the test.
 
-**Handheld.** A Palm OS device that can store a Plucker document in internal memory and open it in the Plucker viewer. Images are prepared for a 160×160 one-bit screen, which is the classic Palm OS display. Text is ordinary Plucker text in Latin-1. A higher-resolution or color Palm OS device can open a normal Plucker document. This project does not write hi-res image records, and it does not claim those screens were tried.
+**Desktop.** A Unix machine running a GTK 3 build of J-Pilot with plugin support, plus the libraries under [Install](#install). The helper uses `signal.alarm`, so it expects a Unix-style desktop. Python 3.9 or later is required at sync time. Image conversion calls ImageMagick 7 (`magick`). Without `magick`, articles still sync and the alt text is kept when an image cannot be converted. Omarchy Linux is the desktop this has been synced from.
 
-No Palm model, Palm OS version, or Plucker build is recorded as tested in this repository. Treat behavior on a real handheld as untested until someone writes down a HotSync.
+**Handheld.** A Palm OS device that can store a Plucker document in internal memory and open it in the Plucker viewer. The Tungsten T3 is one of those devices. Its screen is 320×480. Images in the edition are still prepared for a 160×160 one-bit screen, which is the classic Palm OS display, and the conduit does not write hi-res image records. Text is ordinary Plucker text in Latin-1. The T3 test used that standard document.
+
+Other models are not listed here. They have not been part of a recorded sync.
 
 Plucker project files: [SourceForge](https://sourceforge.net/projects/plucker/).
 
@@ -119,7 +122,7 @@ usage: python3 rss_plucker.py FEEDS.txt OUTPUT.pdb
 
 The items below are planned. They are not in the tree yet.
 
-- Write down a real HotSync: handheld model, Palm OS version, and Plucker version.
+- Write down the Palm OS version and the Plucker build used on the Tungsten T3.
 - Keep more than the current calendar day when a device has room for it.
 - Optional image records larger than 160×160 for handhelds whose screens can use them.
 - A checked-in sample feed so the edition builder can be tested without the network.
@@ -128,9 +131,15 @@ The items below are planned. They are not in the tree yet.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). Bug reports and changes should say whether a handheld was actually in the loop.
 
+## How this was made
+
+Feeds to Plucker was written with OpenAI Codex, using the Astra model, as a coding assistant on the desktop. The program that runs at HotSync does not call a model. Fetching, extraction, dithering, and the Plucker file are ordinary code.
+
 ## License
 
-This repository has no `LICENSE` file. No license is granted for the code, the text, or the brand artwork until the maintainer adds one. Do not assume you can copy them into another project yet.
+Feeds to Plucker is free software. You can redistribute it and modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version. The same terms cover the brand text and artwork in this repository. See [LICENSE](LICENSE). Copyright (C) 2026 Alex White.
+
+The typefaces named in the brand kit are not part of that grant. They stay under their own licenses, and the font files are not bundled here.
 
 ## References
 

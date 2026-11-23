@@ -30,11 +30,11 @@ Do not commit generated `*.pdb` files or `*.so` plugins. Both are gitignored.
 
 Match the style of the file you are editing. The C plugin is the J-Pilot UI and the install step. The Python helper fetches feeds and writes the Plucker records. Keep a behavior change in the helper reflected in the README, including the limits (dates, 500 articles, 160×160, Latin-1, the 45-second bound).
 
-Claims about hardware belong in the README only after a real HotSync. Name the model, the Palm OS version, and the Plucker version. Until then, leave the device section marked untested.
+The recorded sync is a Palm Tungsten T3 from an Omarchy Linux desktop. A claim about any other model belongs in the README only after a real HotSync. Name the model, the Palm OS version, and the Plucker version.
 
 Screenshots in the README are either real captures or images that say PLACEHOLDER on the image itself. A diagram of the file format is fine when it is labeled as a diagram. Do not draw a picture of a Palm screen and present it as a photograph.
 
-This conduit does not call a language model. If a later change adds one, name the step it covers and keep the README accurate.
+The running conduit does not call a language model. It was written with OpenAI Codex using the Astra model. That fact lives in the README. If a later change makes the program call a model at sync time, name the step it covers.
 
 ## Brand kit
 
@@ -42,7 +42,7 @@ Naming, colors, type, and marks live in [brand/README.md](brand/README.md). The 
 
 ## License
 
-There is no `LICENSE` file. Please do not add one on your own. The maintainer has to choose it. Until that file exists, no license is granted.
+The project is GPL-2.0-or-later. See [LICENSE](LICENSE). Contributions are made under those same terms. Copyright (C) 2026 Alex White.
 
 ## Reports
 

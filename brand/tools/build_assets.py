@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Copyright (C) 2026 Alex White
+
 """Redraw Fourshade pixel marks, banners, and badges.
 
 The SVG files are the assets to copy. Run this when the wordmark or the
@@ -343,7 +346,7 @@ def build():
     placeholder("docs/placeholder-jpilot.svg",
                 ["The Feeds to Plucker panel in J-Pilot.", "Not a window capture."])
     placeholder("docs/placeholder-device.svg",
-                ["J-Pilot RSS Today open in Plucker.", "No device test is recorded in this repo."])
+                ["J-Pilot RSS Today open in Plucker.", "A photograph from the Tungsten T3 test goes here."])
 
 
 if __name__ == "__main__":

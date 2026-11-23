@@ -8,7 +8,7 @@
 
 ## Handheld
 
-Was a device in the loop? If yes, name the model, Palm OS version, and Plucker version. If no, the README should still say device behavior is untested.
+Was a device in the loop? If yes, name the model, Palm OS version, and Plucker version. The recorded test is a Tungsten T3 from Omarchy Linux. If this change was not synced, say so, and do not describe it as tested on hardware.
 
 ## Screenshots
 

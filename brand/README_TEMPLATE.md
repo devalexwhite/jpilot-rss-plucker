@@ -85,9 +85,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-<!-- Name the license and link the LICENSE file.
-     If the maintainer has not chosen one, say that no license is
-     granted yet. Do not pick a license in this template. -->
+<!-- This collection uses GPL-2.0-or-later, the same terms as J-Pilot.
+     Keep the paragraph if the new repo stays on those terms.
+     If it does not, replace the paragraph and the LICENSE file together. -->
+
+[Project name] is free software. You can redistribute it and modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version. See [LICENSE](LICENSE).
 
 ## References
 
