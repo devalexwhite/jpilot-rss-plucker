@@ -38,7 +38,7 @@ The running conduit does not call a language model. It was written with OpenAI C
 
 ## Brand kit
 
-Naming, colors, type, and marks live in [brand/README.md](brand/README.md). The collection name in that guide is Fourshade. Artwork is redrawn with `python3 brand/tools/build_assets.py` (it needs `rsvg-convert`, and Departure Mono installed, for the banner text). Copy the SVG and PNG files when another repo reuses the kit.
+Naming, colors, type, and marks live in [brand/README.md](brand/README.md). The collection name in that guide is Bitcradle. Artwork is redrawn with `python3 brand/tools/build_assets.py` (it needs `rsvg-convert`, and Departure Mono installed, for the banner text). Copy the SVG and PNG files when another repo reuses the kit.
 
 ## License
 

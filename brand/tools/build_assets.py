@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 # Copyright (C) 2026 Alex White
 
-"""Redraw Fourshade pixel marks, banners, and badges.
+"""Redraw Bitcradle pixel marks, banners, and badges.
 
 The SVG files are the assets to copy. Run this when the wordmark or the
 banner copy changes. Banner text uses Departure Mono if it is installed;
@@ -75,15 +75,18 @@ NIGHT = "#14180F"
 
 MARK = {
     "light": dict(body=INK, screen=PAPER, select=INK, select_text=PAPER,
-                  row=INK, row_dim=GRAPHITE, lamp=BACKLIGHT),
+                  row=INK, row_dim=GRAPHITE, lamp=BACKLIGHT, cradle=GRAPHITE),
     "dark": dict(body=MOSS, screen=NIGHT, select=PHOSPHOR, select_text=NIGHT,
-                 row=PHOSPHOR, row_dim=BACKLIGHT, lamp=BACKLIGHT),
+                 row=PHOSPHOR, row_dim=BACKLIGHT, lamp=BACKLIGHT, cradle=GRAPHITE),
     "lcd": dict(body=NIGHT, screen=BACKLIGHT, select=NIGHT, select_text=BACKLIGHT,
-                row=NIGHT, row_dim=MOSS, lamp=PHOSPHOR),
-    # Moss bezel so the mark stays visible on a Night panel.
+                row=NIGHT, row_dim=MOSS, lamp=PHOSPHOR, cradle=MOSS),
+    # Moss bezel so the handheld stays visible on a Night panel.
     "panel": dict(body=MOSS, screen=BACKLIGHT, select=NIGHT, select_text=BACKLIGHT,
-                  row=NIGHT, row_dim=MOSS, lamp=PHOSPHOR),
+                  row=NIGHT, row_dim=MOSS, lamp=PHOSPHOR, cradle=GRAPHITE),
 }
+MARK_W = 48
+MARK_H = 58
+WORDMARK = "BITCRADLE"
 WORD = {"light": INK, "dark": PHOSPHOR, "lcd": NIGHT}
 PNG_BG = {"light": PAPER, "dark": NIGHT, "lcd": PAPER}
 WORD_PNG_BG = {"light": PAPER, "dark": NIGHT, "lcd": BACKLIGHT}
@@ -126,22 +129,33 @@ def text_width(text, scale):
 
 
 def mark_shapes(variant, x=0, y=0, scale=1):
+    """Handheld seated in a plain cradle. No Palm or HotSync marks."""
     c = MARK[variant]
     s = scale
-    body = rect(x, y, 36 * s, 48 * s, c["body"], rx=4 * s)
-    screen = rect(x + 4 * s, y + 4 * s, 28 * s, 28 * s, c["screen"])
-    select = rect(x + 7 * s, y + 8 * s, 22 * s, 5 * s, c["select"])
-    select_text = rect(x + 9 * s, y + 10 * s, 12 * s, 2 * s, c["select_text"])
-    rows = (
-        rect(x + 9 * s, y + 16 * s, 16 * s, 2 * s, c["row"])
-        + rect(x + 9 * s, y + 20 * s, 11 * s, 2 * s, c["row"])
-        + rect(x + 9 * s, y + 24 * s, 18 * s, 2 * s, c["row_dim"])
+
+    def at(px, py, w, h, fill, rx=None):
+        return rect(x + px * s, y + py * s, w * s, h * s, fill, None if rx is None else rx * s)
+
+    # Posts and a base, drawn first so the handheld sits in front of them.
+    cradle = (
+        at(0, 42, 7, 12, c["cradle"])
+        + at(41, 42, 7, 12, c["cradle"])
+        + at(0, 52, 48, 6, c["cradle"], rx=1)
     )
-    lamp = rect(x + 16 * s, y + 38 * s, 4 * s, 4 * s, c["lamp"])
-    return body + screen + select + select_text + rows + lamp
+    body = at(6, 0, 36, 46, c["body"], rx=4)
+    screen = at(10, 4, 28, 28, c["screen"])
+    select = at(13, 8, 22, 5, c["select"])
+    select_text = at(15, 10, 12, 2, c["select_text"])
+    rows = (
+        at(15, 16, 16, 2, c["row"])
+        + at(15, 20, 11, 2, c["row"])
+        + at(15, 24, 18, 2, c["row_dim"])
+    )
+    lamp = at(22, 36, 4, 4, c["lamp"])
+    return cradle + body + screen + select + select_text + rows + lamp
 
 
-def document(width, height, body, background=None, title="Fourshade", desc=""):
+def document(width, height, body, background=None, title="Bitcradle", desc=""):
     bg = rect(0, 0, width, height, background) if background else ""
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -206,7 +220,7 @@ def badge(filename, label, message):
         f"brand/assets/badges/{filename}.svg",
         width, height, body, PAPER,
         f"{label} {message}",
-        "Fourshade badge. Flat square, Phosphor on Ink and Moss.",
+        "Bitcradle badge. Flat square, Phosphor on Ink and Moss.",
         width * 4,
     )
 
@@ -217,17 +231,17 @@ def hero(path, kicker, title, pitch, png_width=1280):
         rect(0, 0, 1280, 360, PAPER)
         + rect(0, 0, 500, 360, NIGHT)
         + '<g shape-rendering="crispEdges">'
-        + mark_shapes("panel", 56, 132, 2)
+        + mark_shapes("panel", 40, 122, 2)
         + "</g>"
-        + text_el("edit-collection", 156, 186, 33, PHOSPHOR, "FOURSHADE")
-        + text_el("edit-tagline-1", 156, 224, 22, BACKLIGHT, "Palm OS hardware,")
-        + text_el("edit-tagline-2", 156, 252, 22, BACKLIGHT, "still at work.")
+        + text_el("edit-collection", 160, 176, 33, PHOSPHOR, "BITCRADLE")
+        + text_el("edit-tagline-1", 160, 214, 22, BACKLIGHT, "Palm OS hardware,")
+        + text_el("edit-tagline-2", 160, 242, 22, BACKLIGHT, "still at work.")
         + text_el("edit-kicker", 548, 132, 22, PINE, kicker)
         + text_el("edit-title", 548, 196, 44, INK, title)
         + text_el("edit-pitch-1", 548, 252, 22, GRAPHITE, pitch[0])
         + text_el("edit-pitch-2", 548, 282, 22, GRAPHITE, pitch[1])
     )
-    svg = document(1280, 360, body, None, title, "Fourshade README banner, 1280 by 360.")
+    svg = document(1280, 360, body, None, title, "Bitcradle README banner, 1280 by 360.")
     # The banner already paints its background, so the SVG and the PNG match.
     write_svg(path, svg)
     rasterize(svg, str(Path(path).with_suffix(".png")), png_width)
@@ -258,9 +272,9 @@ def social(path, kicker, title, pitch_lines, diagram_label):
         rect(0, 0, 1280, 640, PAPER)
         + rect(0, 0, 1280, 12, NIGHT)
         + '<g shape-rendering="crispEdges">'
-        + mark_shapes("lcd", 64, 64, 3)
-        + pixel_text("FOURSHADE", 196, 96, 6, INK)
-        + pixel_text("PALM OS HARDWARE, STILL AT WORK.", 196, 160, 2, PINE)
+        + mark_shapes("lcd", 48, 48, 3)
+        + pixel_text(WORDMARK, 216, 78, 6, INK)
+        + pixel_text("PALM OS HARDWARE, STILL AT WORK.", 216, 140, 2, PINE)
         + "</g>"
         + text_el("edit-kicker", 64, 280, 22, PINE, kicker)
         + text_el("edit-title", 64, 360, 55, INK, title)
@@ -268,7 +282,7 @@ def social(path, kicker, title, pitch_lines, diagram_label):
         + text_el("edit-pitch-2", 64, 462, 22, GRAPHITE, pitch_lines[1])
         + screen_card(792, 48, diagram_label)
     )
-    svg = document(1280, 640, body, None, title, "Fourshade social preview, 1280 by 640. The screen is a diagram.")
+    svg = document(1280, 640, body, None, title, "Bitcradle social preview, 1280 by 640. The screen is a diagram.")
     write_svg(path, svg)
     rasterize(svg, str(Path(path).with_suffix(".png")), 1280)
 
@@ -290,32 +304,44 @@ def placeholder(path, lines):
 
 
 def build():
-    desc_mark = "Square screen, selected row, three quieter rows, one lamp pixel. Not a specific Palm model."
+    desc_mark = (
+        "Handheld in a plain cradle: square screen, selected row, three quieter rows, "
+        "one lamp pixel. Not a specific Palm model."
+    )
     for name in ("light", "dark", "lcd"):
         body = '<g shape-rendering="crispEdges">' + mark_shapes(name) + "</g>"
-        pair(f"brand/assets/mark-{name}.svg", 36, 48, body, PNG_BG[name],
-             f"Fourshade mark, {name}", desc_mark, 288)
-        word = '<g shape-rendering="crispEdges">' + pixel_text("FOURSHADE", 0, 0, 8, WORD[name]) + "</g>"
-        pair(f"brand/assets/wordmark-{name}.svg", text_width("FOURSHADE", 8), 56, word,
-             WORD_PNG_BG[name], f"Fourshade wordmark, {name}",
-             "FOURSHADE set in a 5 by 7 pixel grid.", 960)
-        lockup_word = pixel_text("FOURSHADE", 72 + 20, 30, 5, WORD["light" if name == "lcd" else name])
-        if name == "dark":
-            lock_fill_word = WORD["dark"]
-            lockup_word = pixel_text("FOURSHADE", 92, 30, 5, lock_fill_word)
+        pair(f"brand/assets/mark-{name}.svg", MARK_W, MARK_H, body, PNG_BG[name],
+             f"Bitcradle mark, {name}", desc_mark, MARK_W * 8)
+        word = '<g shape-rendering="crispEdges">' + pixel_text(WORDMARK, 0, 0, 8, WORD[name]) + "</g>"
+        pair(f"brand/assets/wordmark-{name}.svg", text_width(WORDMARK, 8), 56, word,
+             WORD_PNG_BG[name], f"Bitcradle wordmark, {name}",
+             "BITCRADLE set in a 5 by 7 pixel grid.", 960)
+        word_scale = 5
+        word_h = 7 * word_scale
+        mark_h = MARK_H * 2
+        word_x = MARK_W * 2 + 16
+        word_y = (mark_h - word_h) // 2
+        word_fill = WORD["light"] if name == "lcd" else WORD[name]
         body = (
             '<g shape-rendering="crispEdges">'
             + mark_shapes(name, 0, 0, 2)
-            + lockup_word
+            + pixel_text(WORDMARK, word_x, word_y, word_scale, word_fill)
             + "</g>"
         )
-        pair(f"brand/assets/lockup-{name}.svg", 92 + text_width("FOURSHADE", 5), 96, body,
-             PNG_BG[name], f"Fourshade lockup, {name}",
-             "Mark and FOURSHADE wordmark.", 1200)
+        pair(
+            f"brand/assets/lockup-{name}.svg",
+            word_x + text_width(WORDMARK, word_scale),
+            mark_h,
+            body,
+            PNG_BG[name],
+            f"Bitcradle lockup, {name}",
+            "Cradle mark and BITCRADLE wordmark.",
+            1400,
+        )
 
     badge("palm-os-compatible", "PALM OS", "COMPATIBLE")
     badge("hotsync-ready", "HOTSYNC", "READY")
-    badge("fourshade", "FOURSHADE", "COLLECTION")
+    badge("bitcradle", "BITCRADLE", "COLLECTION")
 
     # Alphabet specimen.
     letters = "ABCDEFGHIJKLM NOPQRSTUVWXYZ 0123456789"
@@ -326,7 +352,7 @@ def build():
     body += pixel_text("0123456789", 8, 80, 4, INK)
     body += "</g>"
     width = text_width("ABCDEFGHIJKLM", 4) + 16
-    specimen = document(width, 120, body, None, "Fourshade pixel alphabet",
+    specimen = document(width, 120, body, None, "Bitcradle pixel alphabet",
                         "5 by 7 capitals used by the wordmarks and badges.")
     write_svg("brand/assets/pixel-alphabet.svg", specimen)
     rasterize(specimen, "brand/assets/pixel-alphabet.png", width * 2)

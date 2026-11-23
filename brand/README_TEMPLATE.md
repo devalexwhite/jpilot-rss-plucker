@@ -1,5 +1,5 @@
 <!--
-  Fourshade README template.
+  Bitcradle README template.
   Copy this file to the repository root as README.md and replace every
   HTML comment. Delete the comments when you are done.
   Hero and social images: GitHub does not render SVG in Markdown.
@@ -14,7 +14,7 @@
 <!-- Collection + status badges. Example set:
 [![Palm OS compatible](https://img.shields.io/badge/Palm%20OS-compatible-2C3420?style=flat-square&labelColor=161814)](brand/README.md)
 [![HotSync ready](https://img.shields.io/badge/HotSync-ready-5C6B3A?style=flat-square&labelColor=161814)](brand/README.md)
-[![Fourshade](https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&labelColor=161814)](brand/README.md)
+[![Bitcradle](https://img.shields.io/badge/Bitcradle-collection-4E524A?style=flat-square&labelColor=161814)](brand/README.md)
 -->
 
 <!-- Hero banner. Point at a PNG, 1280×360. -->
@@ -23,7 +23,7 @@
 
 <!-- One sentence: what is on the handheld after the sync, or what the tool does. -->
 
-A [Fourshade](brand/README.md) project. Palm OS hardware, still at work.
+A [Bitcradle](brand/README.md) project. Palm OS hardware, still at work.
 
 ## Pitch
 
@@ -97,6 +97,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-Part of **Fourshade**. Palm OS hardware, still at work.
+Part of **Bitcradle**. Palm OS hardware, still at work.
 
 Colors, type, and marks: [brand/README.md](brand/README.md). Copy that folder into another Palm OS project to reuse it. If the kit moves to its own repository, point this footer at the new home.

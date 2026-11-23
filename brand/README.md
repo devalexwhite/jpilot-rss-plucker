@@ -1,4 +1,4 @@
-# Fourshade
+# Bitcradle
 
 A portable brand kit for a collection of small tools that keep Palm OS handhelds doing useful work. Copy this folder into another repository, or lift it out later into its own repo. Everything the kit needs is in this directory: the name, the voice, the colors, the type, the marks, and a README template. Fonts are linked, not bundled.
 
@@ -12,17 +12,17 @@ AI, when a project uses it, is a tool for a specific step: extract a page, draft
 
 ## Name
 
-### Chosen: Fourshade
+### Chosen: Bitcradle
 
-Classic Palm OS greyscale was often four shades of grey, on a reflective LCD that later gained a green backlight. **Fourshade** names that screen without using a Palm trademark. It is short, it sets well in a pixel wordmark, and it sounds like a small workshop.
+The cradle is where the desktop hands the handheld a finished file, and the bit is what the screen can hold. **Bitcradle** names that handoff. It still fits if a later tool is color or hi-res, and it does not use a Palm trademark.
 
-The name is a nod, not a display spec. Later machines had sixteen greys or color, and Feeds to Plucker dithers images to one bit. Do not promise four-shade output just because the collection is called Fourshade.
+Say it “bit cradle.” In prose, write **Bitcradle**. The pixel wordmark is **BITCRADLE**.
 
-Say it “four shade.” In prose, write **Fourshade**. The pixel wordmark is **FOURSHADE**.
+A search did not turn up a software brand with this spelling. Check it again before a domain or a printed case.
 
-### Alternate: Bitcradle
+### Set-aside alternate: Fourshade
 
-The cradle is where the desktop hands the handheld a finished file, and the bit is what the screen can hold. The name is broad enough for a later color or hi-res tool. A search did not turn up a software brand with this spelling. Check it again before buying a domain or printing it on a case.
+Fourshade was the first working name. It pointed at four shades of grey on a Palm OS LCD. Alex chose Bitcradle instead, so Fourshade is a set-aside alternate. It stays in this list so the next repo does not revive it by accident. It was a nod to the greyscale era, not a promise of four-shade output. Feeds to Plucker still dithers images to one bit.
 
 ### Alternate: Pocket Phosphor
 
@@ -38,6 +38,7 @@ These were real candidates. They are listed so the next repo does not revive the
 | Pixcradle | pixelcradle.com is PixelCradle, a photo-backup product. The spellings are too close. |
 | Lampblack | A book-writing app (lampblack.dev), plus a studio and a consultancy. |
 | Synclamp | synclamps.com already uses the word. |
+| Fourshade | Set-aside alternate. First working name, replaced by Bitcradle. |
 
 This was a web search, not a trademark clearance.
 
@@ -45,17 +46,24 @@ This was a web search, not a trademark clearance.
 
 **Palm OS hardware, still at work.**
 
-Use it under the wordmark, in a collection footer, and as the last line of a social preview. Project taglines stay specific to the tool. The collection tagline stays this one.
+The line still fits Bitcradle. The name is the handoff at the cradle. The tagline is why the collection exists: the machines are still doing a job. A line that only mentions the cradle would fit this conduit, and it would fit a later notes or maps tool less well.
+
+Two alternates, if a tighter line is wanted later:
+
+- **The cradle still has a job.** Same idea, closer to the name.
+- **A finished file, left on the handheld.** Concrete. Narrower if a project is not a document.
+
+Use the chosen line under the wordmark, in a collection footer, and as the last line of a social preview. Project taglines stay specific to the tool.
 
 ## Messaging
 
 ### One-liner
 
-Fourshade makes small, practical tools so a Palm OS handheld can keep doing a real job. A model is welcome only at the step where it saves one.
+Bitcradle makes small, practical tools so a Palm OS handheld can keep doing a real job. A model is welcome only at the step where it saves one.
 
 ### Short paragraph
 
-A lot of these machines still power on. The screen is small, the battery is a known quantity, and the software pattern is a cradle, a conduit, and a document that stays on the device after the cable comes out. Fourshade builds that kind of tool. When ordinary code can turn something from the network into a file the handheld can hold, that code is the product. When a model can do one of those steps more carefully, use it there and name the step in the README. The aim is a device that still earns its pocket, with the claims kept as small as the screen.
+A lot of these machines still power on. The screen is small, the battery is a known quantity, and the software pattern is a cradle, a conduit, and a document that stays on the device after the cable comes out. Bitcradle builds that kind of tool. When ordinary code can turn something from the network into a file the handheld can hold, that code is the product. When a model can do one of those steps more carefully, use it there and name the step in the README. The aim is a device that still earns its pocket, with the claims kept as small as the screen.
 
 ### Pillars
 
@@ -109,7 +117,7 @@ The hardware gets respect. Constraints are interesting. They are not a punchline
 
 ## Color
 
-The palette is the reflective greyscale LCD in daylight, and the same screen with the green backlight on. Plastic colors from particular models (silver aluminum, blue faceplates) stay out. So do Palm’s blue title bars from later color releases.
+The palette did not change with the name. Bitcradle is about the handoff, and the colors are still the screen: reflective greyscale in daylight, and the same screen with the green backlight on. Plastic colors from particular models (silver aluminum, blue faceplates) stay out. So do Palm’s blue title bars from later color releases.
 
 Hex values are the source of truth. Names are for writing and for CSS variables.
 
@@ -200,7 +208,7 @@ When you bundle a font with software, ship the license file and respect the rese
 
 ## Marks
 
-The mark is a square screen on a tall bezel: one selected list row, three quieter rows, and a single lamp pixel on the chin. It is meant to read as “a document on a small screen,” including at 16px. It is not a drawing of a Palm V, a Tungsten, or any other specific model.
+The mark is a handheld sitting in a plain cradle. The screen is square, with one selected list row, three quieter rows, and a lamp pixel on the chin. The cradle is two posts and a base, drawn in the same pixel geometry. It should still read at a small size. It is not a drawing of a Palm V, a Tungsten, or any other specific model.
 
 Leave these out of every asset:
 
@@ -221,7 +229,7 @@ SVG is the source. PNG companions are what GitHub READMEs and the social-preview
 | `assets/mark-light.svg` | Mark, ink bezel, paper screen, green lamp |
 | `assets/mark-dark.svg` | Mark for a Night background |
 | `assets/mark-lcd.svg` | Mark with the green backlight field |
-| `assets/wordmark-light.svg` | FOURSHADE in 5×7 pixels, Ink |
+| `assets/wordmark-light.svg` | BITCRADLE in 5×7 pixels, Ink |
 | `assets/wordmark-dark.svg` | Wordmark in Phosphor |
 | `assets/wordmark-lcd.svg` | Wordmark in Night, for use on Backlight |
 | `assets/lockup-light.svg` | Mark plus wordmark, for Paper |
@@ -232,7 +240,7 @@ SVG is the source. PNG companions are what GitHub READMEs and the social-preview
 | `assets/placeholder-frame.svg` | A frame that says PLACEHOLDER, so an empty screenshot slot cannot be mistaken for a capture |
 | `assets/badges/palm-os-compatible.svg` | “Palm OS / compatible” |
 | `assets/badges/hotsync-ready.svg` | “HotSync / ready” |
-| `assets/badges/fourshade.svg` | “Fourshade / collection” |
+| `assets/badges/bitcradle.svg` | “Bitcradle / collection” |
 | `assets/pixel-alphabet.svg` | The 5×7 capitals the wordmarks use |
 
 Each of those has a `.png` beside it.
@@ -246,7 +254,7 @@ The SVG badges use Phosphor on Ink (label) and Phosphor on Moss (message), flat 
 ```
 https://img.shields.io/badge/Palm%20OS-compatible-2C3420?style=flat-square&labelColor=161814
 https://img.shields.io/badge/HotSync-ready-5C6B3A?style=flat-square&labelColor=161814
-https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&labelColor=161814
+https://img.shields.io/badge/Bitcradle-collection-4E524A?style=flat-square&labelColor=161814
 https://img.shields.io/badge/license-GPL--2.0--or--later-4E524A?style=flat-square&labelColor=161814
 ```
 
@@ -254,7 +262,7 @@ https://img.shields.io/badge/license-GPL--2.0--or--later-4E524A?style=flat-squar
 | --- | --- | --- | --- |
 | Palm OS compatible | Ink `#161814` | Moss `#2C3420` | white |
 | HotSync ready | Ink `#161814` | Olive `#5C6B3A` | white |
-| Fourshade collection | Ink `#161814` | Graphite `#4E524A` | white |
+| Bitcradle collection | Ink `#161814` | Graphite `#4E524A` | white |
 | GPL-2.0-or-later | Ink `#161814` | Graphite `#4E524A` | white |
 
 Change the collection badge if the name changes. “HotSync” on a badge means the tool runs during that sync. It is not Palm’s logo. The license badge points at a `LICENSE` file. This repository’s file is GPL-2.0-or-later, the same terms as J-Pilot, with the “or any later version” grant.
@@ -290,7 +298,7 @@ Screenshot slots stay labeled as placeholders until a real capture exists. A dia
 
 ## Trademarks
 
-Palm, Palm OS, HotSync, Graffiti, and the old Palm logos belong to their owners. Fourshade is an independent collection. We use “Palm OS” and “HotSync” to identify the platform and the sync step. We do not use Palm’s logos.
+Palm, Palm OS, HotSync, Graffiti, and the old Palm logos belong to their owners. Bitcradle is an independent collection. We use “Palm OS” and “HotSync” to identify the platform and the sync step. We do not use Palm’s logos.
 
 Plucker is the name of the open-source document format and viewer this conduit targets. Use the name. Do not copy a Plucker logo into this kit.
 

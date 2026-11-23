@@ -2,14 +2,14 @@
 
 [![Palm OS compatible](https://img.shields.io/badge/Palm%20OS-compatible-2C3420?style=flat-square&labelColor=161814)](brand/README.md)
 [![HotSync ready](https://img.shields.io/badge/HotSync-ready-5C6B3A?style=flat-square&labelColor=161814)](brand/README.md)
-[![Fourshade](https://img.shields.io/badge/Fourshade-collection-4E524A?style=flat-square&labelColor=161814)](brand/README.md)
+[![Bitcradle](https://img.shields.io/badge/Bitcradle-collection-4E524A?style=flat-square&labelColor=161814)](brand/README.md)
 [![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-4E524A?style=flat-square&labelColor=161814)](LICENSE)
 
 ![Feeds to Plucker](docs/hero.png)
 
 During HotSync, Feeds to Plucker collects today's RSS, Atom, and Gemsub articles on the desktop and installs them as one Plucker document for offline reading.
 
-A [Fourshade](brand/README.md) project. Palm OS hardware, still at work.
+A [Bitcradle](brand/README.md) project. Palm OS hardware, still at work.
 
 ## Pitch
 
@@ -151,6 +151,6 @@ The typefaces named in the brand kit are not part of that grant. They stay under
 
 ---
 
-Part of **Fourshade**. Palm OS hardware, still at work.
+Part of **Bitcradle**. Palm OS hardware, still at work.
 
 Colors, type, and marks: [brand/README.md](brand/README.md). Copy that folder into another Palm OS project to reuse it.
